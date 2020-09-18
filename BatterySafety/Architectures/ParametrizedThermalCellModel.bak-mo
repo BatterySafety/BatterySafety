@@ -1,0 +1,68 @@
+within BatterySafety.Architectures;
+model ParametrizedThermalCellModel "CellModelWithThermalSystem with parameter records set"
+  extends CellModelWithThermalSystem(redeclare Subsystems.HeatTransfer
+      HeatTransfer(G=transfer.lambda*dimensions.A/transfer.d, C=shared.C,
+      T_0=T_0),
+      redeclare Subsystems.ChemicalHeatGeneration ChemicalHeatGeneration(
+      tr_energy=release.h,
+      heat_capacity=shared.C,
+      heat_release=release.g));
+      parameter Modelica.SIunits.Temperature T_0(displayUnit="degC") "initial temperature";
+  replaceable parameter
+              ParameterSets.HeatReleaseParametersPackage.HeatReleaseParameters
+                                                                           release constrainedby
+    ParameterSets.HeatReleaseParametersPackage.HeatReleaseParameters
+    "Parameters of the heat release(=thermal runaway) model"
+    annotation (Placement(transformation(extent={{30,10},{50,30}})),HideResult=false);
+  replaceable parameter
+    ParameterSets.HeatTransferParametersPackage.HeatTransferParameters transfer
+    constrainedby ParameterSets.HeatTransferParametersPackage.HeatTransferParameters
+    "Parameters of the heat transfer model"
+    annotation (Placement(transformation(extent={{-10,-90},{10,-70}})),HideResult=false);
+  replaceable parameter
+              ParameterSets.SharedParametersPackage.SharedParameters
+                                                                 shared
+    constrainedby ParameterSets.SharedParametersPackage.SharedParameters
+                          "Parameters shared by subsystems of the cell"
+    annotation (Placement(transformation(extent={{-90,30},{-70,50}})),HideResult=false);
+  replaceable parameter
+              ParameterSets.SizeParametersPackage.SizeParameters
+                                                             dimensions
+    constrainedby ParameterSets.SizeParametersPackage.SizeParameters
+                          "Parameters of the cells dimensions"
+    annotation (Placement(transformation(extent={{-90,70},{-70,90}})),HideResult=false);
+  annotation (Diagram(graphics={
+        Rectangle(extent={{-20,-20},{20,-100}}, lineColor={28,108,200}),
+        Rectangle(extent={{-20,40},{60,0}}, lineColor={28,108,200}),
+        Text(
+          extent={{0,60},{40,40}},
+          lineColor={64,64,64},
+          fillColor={128,255,0},
+          fillPattern=FillPattern.Solid,
+          fontSize=18,
+          textString="Chemical
+Heat-release
+Model"),Text(
+          extent={{20,-64},{60,-84}},
+          lineColor={64,64,64},
+          fillColor={128,255,0},
+          fillPattern=FillPattern.Solid,
+          fontSize=18,
+          textString="Heat
+Transfer
+Model
+"),     Rectangle(extent={{-100,100},{-60,20}}, lineColor={28,108,200}),
+        Text(
+          extent={{-60,96},{-20,76}},
+          lineColor={64,64,64},
+          fillColor={128,255,0},
+          fillPattern=FillPattern.Solid,
+          fontSize=18,
+          textString="General
+Model
+Parameters
+")}), Icon(graphics={            Text(
+        extent={{-150,120},{150,160}},
+        textString="%name",
+        lineColor={0,0,255})}));
+end ParametrizedThermalCellModel;

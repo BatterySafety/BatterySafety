@@ -1,0 +1,9 @@
+HeatingAssembly
+ElectricalModelWithBurnedResistance
+ElectricalModelWithSOCOutAndBurnedRes
+CellModelWithThermalAndElectricalSystem
+CellModelWithThermalSystem
+ParameterizeableThermalCellModel
+Module6CellsExperiment
+ModuleNCells
+ModuleNCellsExperiment
