@@ -1,4 +1,12 @@
-### Hi there 👋
+Hello there!
+
+Welcome to the BatterySafety Modelica package.
+The repository is a work in progress but the contents are ready to use.
+
+You can contact the developer for anything concerning the package, like feedback, bug reports and contributions
+under this address: BatterySafety@v2c2.at
+
+We are looking forward to hear from you :)
 
 <!--
 **BatterySafety/BatterySafety** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
