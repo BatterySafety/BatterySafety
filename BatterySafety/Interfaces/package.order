@@ -1,0 +1,15 @@
+EnergyPort
+EnergyPort_a
+EnergyPort_b
+PartialTwoPort
+EnergyThermal
+HeatTransfer
+ParametrisedHeatTransfer
+HeatStorageAndTransfer
+ChemicalHeatGeneration
+ChemicalHeatGenerationWithStatus
+ElectricModel
+ElectricModelWithBooleanIn
+ElectricModelWithRealOut
+CellModel
+ExternalEnvironment

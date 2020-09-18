@@ -1,0 +1,38 @@
+within BatterySafety.Components;
+model EnergyStorage "Component model"
+  extends Icons.EnergyStorage;
+
+  parameter Modelica.SIunits.Energy  E_max = 1 "Energy capacity" annotation(HideResult=true);
+  Modelica.SIunits.Energy E(start=E_max,min=0,max=E_max, displayUnit="kJ") "Stored Energy";
+  Modelica.SIunits.Power der_E(start=0) annotation(HideResult=true);
+  Interfaces.EnergyPort_a port
+    annotation (Placement(transformation(
+        origin={0,-100},
+        extent={{-10,-10},{10,10}},
+        rotation=90)));
+initial equation
+  E=E_max;
+equation
+  E = port.E;
+  der_E=der(E);
+  der(E) = port.P_flow;
+  // Check for correct solution
+  assert(E <= E_max, "Storage is overflowing (E_max < E = " + String(E) + ")",AssertionLevel.warning);
+  assert(E > -1e-6*E_max, "Energy level (= " + String(E) + ") is below zero meaning that the solution failed.",AssertionLevel.warning);
+  annotation (Icon(coordinateSystem(preserveAspectRatio=false), graphics={
+          Text(
+            extent={{-80,50},{80,30}},
+            lineColor={0,0,0},
+          textString="capacity"),Text(
+        extent={{-150,110},{150,150}},
+        textString="%name",
+        lineColor={0,0,255}),
+          Text(
+            extent={{-80,-30},{80,-50}},
+            lineColor={0,0,0},
+          textString="%E_max")}),                                Diagram(
+        coordinateSystem(preserveAspectRatio=false)),
+    Documentation(info="<html>
+<p>Model to store energy as a quantity &gt; 0</p>
+</html>"));
+end EnergyStorage;
