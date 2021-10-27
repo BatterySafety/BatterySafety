@@ -1,4 +1,13 @@
 EnergyStorageAndConversion
 SingleCell
+Module
 ModuleWith6Cells
 ModuleWithVariableCells
+FaultyContactModule
+BatteryPack
+BatteryPack_withCellSpacers
+BatteryPack_Idle
+BatteryPack_Idle_withCellSpacers
+SingleCell_essl
+Module_essl
+BatteryPack_essl

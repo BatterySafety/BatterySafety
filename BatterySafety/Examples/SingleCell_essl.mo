@@ -1,19 +1,13 @@
 within BatterySafety.Examples;
-model SingleCell "Thermal runaway experiment with a single cell"
+model SingleCell_essl
+  "Thermal runaway experiment with a single cell with parameters from from DOI: 10.1149/1945-7111/abbe5a Cell #2"
   extends Modelica.Icons.Example;
-  CellModels.MetalCan60Ah MetalCan60Ah(T_0=globalParameters.T_0) annotation (
+  CellModels.MetalCan60Ah_essl
+                          MetalCan60Ah(T_0=globalParameters.T_0) annotation (
       Placement(transformation(
         extent={{-10,-10},{10,10}},
-        rotation=0,
+        rotation=90,
         origin={-52,0})));
-  Subsystems.HeatingElement heatingElement(
-    ini_power=800,
-    ini_duration=80,
-    ramp_start_power=390,
-    ramp_end_power=400,
-    ramp_duration=2000,
-    target_temp=773.15,
-    T_0=globalParameters.T_0) annotation (Placement(transformation(extent={{-90,-10},{-70,10}})));
   Subsystems.GlobalParameters globalParameters(T_0=293.15)
     annotation (Placement(transformation(extent={{-90,22},{-70,42}})));
   Subsystems.HeatingElement heatingElement_off(
@@ -26,11 +20,22 @@ model SingleCell "Thermal runaway experiment with a single cell"
     T_0=globalParameters.T_0)
     "this was placed here so the cell would cool down faster after TR"
     annotation (Placement(transformation(extent={{-14,-10},{-34,10}})));
+  Subsystems.HeatingElement heatingElement(
+    ini_power=800,
+    ini_duration=80,
+    ramp_start_power=300,
+    ramp_end_power=1000,
+    ramp_duration=2000,
+    target_temp=773.15,
+    T_0=globalParameters.T_0) annotation (Placement(transformation(extent={{-90,-10},{-70,10}})));
 equation
-  connect(MetalCan60Ah.port_R, heatingElement_off.heat_port)
+  connect(MetalCan60Ah.port_a_oop, heatingElement.heat_port) annotation (Line(
+        points={{-62,4.44089e-16},{-66,4.44089e-16},{-66,0},{-70,0}}, color={
+          191,0,0}));
+  connect(MetalCan60Ah.port_b_oop, heatingElement_off.heat_port)
     annotation (Line(points={{-42,0},{-34,0}}, color={191,0,0}));
-  connect(heatingElement.heat_port, MetalCan60Ah.port_L)
-    annotation (Line(points={{-70,0},{-62,0}}, color={191,0,0}));
+  connect(MetalCan60Ah.pin_n, MetalCan60Ah.pin_p)
+    annotation (Line(points={{-62,5},{-62,-5}}, color={0,0,255}));
   annotation (preferredView="diagram",Icon(coordinateSystem(preserveAspectRatio=false)), Diagram(coordinateSystem(
           preserveAspectRatio=false), graphics={Rectangle(
           extent={{-1000,1000},{1000,-1000}},
@@ -47,4 +52,4 @@ equation
 <p><br>Here you can see what a simulation result could look like:</p>
 <p><img src=\"modelica://BatterySafety/Graphics/ex2_res1.png\"/></p>
 </html>"));
-end SingleCell;
+end SingleCell_essl;

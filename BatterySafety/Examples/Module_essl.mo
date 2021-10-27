@@ -1,16 +1,12 @@
 within BatterySafety.Examples;
-model SingleCell "Thermal runaway experiment with a single cell"
+model Module_essl
+  "Thermal runaway experiment with a module with cell parameters from from DOI: 10.1149/1945-7111/abbe5a Cell #2"
   extends Modelica.Icons.Example;
-  CellModels.MetalCan60Ah MetalCan60Ah(T_0=globalParameters.T_0) annotation (
-      Placement(transformation(
-        extent={{-10,-10},{10,10}},
-        rotation=0,
-        origin={-52,0})));
   Subsystems.HeatingElement heatingElement(
     ini_power=800,
     ini_duration=80,
-    ramp_start_power=390,
-    ramp_end_power=400,
+    ramp_start_power=300,
+    ramp_end_power=1000,
     ramp_duration=2000,
     target_temp=773.15,
     T_0=globalParameters.T_0) annotation (Placement(transformation(extent={{-90,-10},{-70,10}})));
@@ -25,12 +21,16 @@ model SingleCell "Thermal runaway experiment with a single cell"
     target_temp=273.15,
     T_0=globalParameters.T_0)
     "this was placed here so the cell would cool down faster after TR"
-    annotation (Placement(transformation(extent={{-14,-10},{-34,10}})));
+    annotation (Placement(transformation(extent={{-6,-10},{-26,10}})));
+  CellModels.Module12_essl
+                      module12_essl(
+                                 T_0=globalParameters.T_0)
+    annotation (Placement(transformation(extent={{-64,-10},{-32,10}})));
 equation
-  connect(MetalCan60Ah.port_R, heatingElement_off.heat_port)
-    annotation (Line(points={{-42,0},{-34,0}}, color={191,0,0}));
-  connect(heatingElement.heat_port, MetalCan60Ah.port_L)
-    annotation (Line(points={{-70,0},{-62,0}}, color={191,0,0}));
+  connect(heatingElement.heat_port, module12_essl.port_a)
+    annotation (Line(points={{-70,0},{-64.6,0}}, color={191,0,0}));
+  connect(module12_essl.port_b, heatingElement_off.heat_port)
+    annotation (Line(points={{-31.4,0},{-26,0}}, color={191,0,0}));
   annotation (preferredView="diagram",Icon(coordinateSystem(preserveAspectRatio=false)), Diagram(coordinateSystem(
           preserveAspectRatio=false), graphics={Rectangle(
           extent={{-1000,1000},{1000,-1000}},
@@ -47,4 +47,4 @@ equation
 <p><br>Here you can see what a simulation result could look like:</p>
 <p><img src=\"modelica://BatterySafety/Graphics/ex2_res1.png\"/></p>
 </html>"));
-end SingleCell;
+end Module_essl;
