@@ -21,12 +21,12 @@ model ModuleNCells "Module architecture"
     constrainedby Interfaces.ParametrisedHeatTransfer
     annotation (Placement(transformation(extent={{10,-30},{30,-10}})), HideResult=true);
 equation
-  connect(port_a,Cell[1].port_a);
-  connect(Cell[N].port_b,port_b);
+  connect(port_L,Cell[1].port_L);
+  connect(Cell[N].port_R,port_R);
 
   for i in 1:N-1 loop
-    connect(Cell[i].port_b,heatTransfer[i].port_a);
-    connect(heatTransfer[i].port_b,Cell[i+1].port_a);
+    connect(Cell[i].port_R,heatTransfer[i].port_L);
+    connect(heatTransfer[i].port_R,Cell[i + 1].port_L);
   end for;
   annotation (Icon(coordinateSystem(preserveAspectRatio=false), graphics={Text(
           extent={{-140,140},{140,100}},

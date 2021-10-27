@@ -36,15 +36,15 @@ partial model ModuleNCellsExperiment "Experiment architecture"
     target_temp=573.15,
     T_0=globalParameters.T_0) annotation (Placement(transformation(extent={{-100,-10},{-80,10}})));
 equation
-  connect(externalEnvironment.heat_portL,ext_transferL. port_b)
+  connect(externalEnvironment.heat_portL,ext_transferL.port_R)
     annotation (Line(points={{-8,-70},{-8,-40},{-20,-40}}, color={191,0,0}));
-  connect(ext_transferL.port_a, cellModule.port_a)
+  connect(ext_transferL.port_L,cellModule.port_L)
     annotation (Line(points={{-40,-40},{-60,-40},{-60,0},{-10,0}}, color={191,0,0}));
-  connect(heatingElement.heat_port, cellModule.port_a)
+  connect(heatingElement.heat_port,cellModule.port_L)
     annotation (Line(points={{-80,0},{-10,0}}, color={191,0,0}));
-  connect(externalEnvironment.heat_portR, ext_transferR.port_b)
+  connect(externalEnvironment.heat_portR,ext_transferR.port_R)
     annotation (Line(points={{8,-70},{8,-40},{20,-40}}, color={191,0,0}));
-  connect(cellModule.port_b, ext_transferR.port_a)
+  connect(cellModule.port_R,ext_transferR.port_L)
     annotation (Line(points={{10,0},{60,0},{60,-40},{40,-40}}, color={191,0,0}));
   annotation (Icon(coordinateSystem(preserveAspectRatio=false)), Diagram(coordinateSystem(
           preserveAspectRatio=false), graphics={Rectangle(

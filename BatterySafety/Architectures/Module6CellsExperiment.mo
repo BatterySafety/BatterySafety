@@ -109,35 +109,35 @@ partial model Module6CellsExperiment
     T_0=globalParameters.T_0) annotation (Placement(transformation(extent={{-140,
             -26},{-160,-6}})));
 equation
-  connect(cell1.port_b, transfer1.port_a)
+  connect(cell1.port_R,transfer1.port_L)
     annotation (Line(points={{-140,20},{-130,20}}, color={191,0,0}));
-  connect(transfer1.port_b, cell2.port_a)
+  connect(transfer1.port_R,cell2.port_L)
     annotation (Line(points={{-110,20},{-100,20}}, color={191,0,0}));
-  connect(cell2.port_b, transfer2.port_a)
+  connect(cell2.port_R,transfer2.port_L)
     annotation (Line(points={{-80,20},{-70,20}}, color={191,0,0}));
-  connect(transfer2.port_b, cell3.port_a)
+  connect(transfer2.port_R,cell3.port_L)
     annotation (Line(points={{-50,20},{-40,20}}, color={191,0,0}));
-  connect(transfer3.port_a, cell3.port_b)
+  connect(transfer3.port_L,cell3.port_R)
     annotation (Line(points={{-10,20},{-20,20}}, color={191,0,0}));
-  connect(cell4.port_a, transfer3.port_b)
+  connect(cell4.port_L,transfer3.port_R)
     annotation (Line(points={{20,20},{10,20}}, color={191,0,0}));
-  connect(cell4.port_b, transfer4.port_a)
+  connect(cell4.port_R,transfer4.port_L)
     annotation (Line(points={{40,20},{50,20}}, color={191,0,0}));
-  connect(transfer4.port_b, cell5.port_a)
+  connect(transfer4.port_R,cell5.port_L)
     annotation (Line(points={{70,20},{80,20}}, color={191,0,0}));
-  connect(cell5.port_b, transfer5.port_a)
+  connect(cell5.port_R,transfer5.port_L)
     annotation (Line(points={{100,20},{110,20}}, color={191,0,0}));
-  connect(transfer5.port_b, cell6.port_a)
+  connect(transfer5.port_R,cell6.port_L)
     annotation (Line(points={{130,20},{140,20}}, color={191,0,0}));
-  connect(cell1.port_a, ext_transferL.port_a) annotation (Line(points={{-160,20},
+  connect(cell1.port_L,ext_transferL.port_L)  annotation (Line(points={{-160,20},
           {-170,20},{-170,-40},{-100,-40}}, color={191,0,0}));
-  connect(externalEnvironment.heat_portL, ext_transferL.port_b)
+  connect(externalEnvironment.heat_portL,ext_transferL.port_R)
     annotation (Line(points={{-8,-50},{-8,-40},{-80,-40}}, color={191,0,0}));
-  connect(ext_transferR.port_b, externalEnvironment.heat_portR)
+  connect(ext_transferR.port_R, externalEnvironment.heat_portR)
     annotation (Line(points={{80,-40},{8,-40},{8,-50}}, color={191,0,0}));
-  connect(ext_transferR.port_a, cell6.port_b)
+  connect(ext_transferR.port_L,cell6.port_R)
     annotation (Line(points={{100,-40},{170,-40},{170,20},{160,20}}, color={191,0,0}));
-  connect(heatingElement.heat_port, cell1.port_a) annotation (Line(points={{
+  connect(heatingElement.heat_port,cell1.port_L)  annotation (Line(points={{
           -160,-16},{-170,-16},{-170,20},{-160,20}}, color={191,0,0}));
   annotation (Icon(coordinateSystem(preserveAspectRatio=false, extent={{-100,
             -100},{100,100}})), Diagram(coordinateSystem(preserveAspectRatio=

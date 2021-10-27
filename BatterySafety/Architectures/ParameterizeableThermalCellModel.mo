@@ -1,10 +1,14 @@
 within BatterySafety.Architectures;
 model ParameterizeableThermalCellModel "Cell architecture"
-  extends CellModelWithThermalSystem(redeclare Subsystems.HeatTransfer1D HeatTransfer(
-      G=transfer.lambda_cell*dimensions.A/transfer.d,
-      C=shared.C,
+  extends CellModelWithThermalSystem(redeclare replaceable
+                                               Subsystems.HeatTransfer1D HeatTransfer(
+      G=transfer.lambda_cell*dimensions.A/dimensions.w,
+      C=shared.C*0.99,
+      G_case=2*transfer.lambda_case*dimensions.A/transfer.d,
+      C_case=shared.C*0.01,
       T_0=T_0),
-      redeclare Subsystems.ChemicalHeatGeneration ChemicalHeatGeneration(
+      redeclare replaceable
+                Subsystems.ChemicalHeatGeneration ChemicalHeatGeneration(
       tr_energy=release.h,
       heat_capacity=shared.C,
       heat_release=release.g));
@@ -33,37 +37,8 @@ model ParameterizeableThermalCellModel "Cell architecture"
     constrainedby ParameterSets.SizeParametersPackage.SizeParameters
                           "Parameters of the cells dimensions"
     annotation (Placement(transformation(extent={{-90,70},{-70,90}})),HideResult=false);
-  annotation (Diagram(graphics={
-        Rectangle(extent={{-20,-20},{20,-100}}, lineColor={28,108,200}),
-        Rectangle(extent={{-20,40},{60,0}}, lineColor={28,108,200}),
-        Text(
-          extent={{0,60},{40,40}},
-          lineColor={64,64,64},
-          fillColor={128,255,0},
-          fillPattern=FillPattern.Solid,
-          fontSize=18,
-          textString="Chemical
-Heat-release
-Model"),Text(
-          extent={{20,-64},{60,-84}},
-          lineColor={64,64,64},
-          fillColor={128,255,0},
-          fillPattern=FillPattern.Solid,
-          fontSize=18,
-          textString="Heat
-Transfer
-Model
-"),     Rectangle(extent={{-100,100},{-60,20}}, lineColor={28,108,200}),
-        Text(
-          extent={{-60,96},{-20,76}},
-          lineColor={64,64,64},
-          fillColor={128,255,0},
-          fillPattern=FillPattern.Solid,
-          fontSize=18,
-          textString="General
-Model
-Parameters
-")}), Icon(graphics={            Text(
+  annotation (
+      Icon(graphics={            Text(
         extent={{-150,120},{150,160}},
         textString="%name",
         lineColor={0,0,255})}),
