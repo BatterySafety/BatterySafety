@@ -1,7 +1,7 @@
 within BatterySafety.Interfaces;
 partial model PartialTwoPort "Partial energy transfer element with two EnergyPort connectors that does not store energy"
 
-    Modelica.SIunits.EnergyFlowRate P_flow
+    Modelica.SIunits.EnergyFlowRate P
     "Energy flow rate from port_a -> port_b";
   Modelica.SIunits.Energy dE "port_a.E - port_b.E";
 public
@@ -11,8 +11,8 @@ public
             110,10}})));
 equation
   dE = port_a.E - port_b.E;
-  port_a.P_flow = P_flow;
-  port_b.P_flow = -P_flow;
+  port_a.P = P;
+  port_b.P = -P;
   annotation (Documentation(info="<html>
 <p>
 This partial model contains the basic connectors and variables to

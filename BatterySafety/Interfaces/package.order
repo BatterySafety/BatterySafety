@@ -13,3 +13,4 @@ ElectricModelWithBooleanIn
 ElectricModelWithRealOut
 CellModel
 ExternalEnvironment
+Module
