@@ -2,7 +2,7 @@ within BatterySafety.Sources;
 model PrescribedEnergyFlow "Prescribed energy flow boundary condition"
   extends Icons.PrescribedEnergyFlow;
 
-  Modelica.Blocks.Interfaces.RealInput P_flow(unit="W") "heat flow rate at port [W]"
+  Modelica.Blocks.Interfaces.RealInput P(unit="W") "heat flow rate at port [W]"
         annotation (Placement(transformation(
         origin={-100,0},
         extent={{20,-20},{-20,20}},
@@ -10,7 +10,7 @@ model PrescribedEnergyFlow "Prescribed energy flow boundary condition"
   Interfaces.EnergyPort_b port annotation (Placement(transformation(extent={{90,
             -10},{110,10}})));
 equation
-  port.P_flow = -P_flow;
+  port.P = -P;
   annotation (Documentation(info="<html>
 <p>
 This model allows a specified amount of energy flow rate to be \"injected\"
