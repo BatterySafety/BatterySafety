@@ -1,0 +1,5 @@
+within BatterySafety.ParameterSets.SizeParametersPackage.UseableData;
+record Samsung60AhMC "Dimensionss of a Samsung 60Ah metal-can cell"
+  extends SizeParameters(l=0.1484, h=0.09786, w=0.02833);
+  extends Icons.UseableData;
+end Samsung60AhMC;

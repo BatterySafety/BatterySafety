@@ -1,0 +1,5 @@
+within BatterySafety.ParameterSets.HeatReleaseParametersPackage.UseableData;
+record SafeBattery "Heat release parameters for a Safebattery cell"
+  extends HeatReleaseParameters(h=450000, T1=150+273.15, T2=230+273.15, T3=750+273.15,g=[0+273.15, -10; 50+273.15, -10; 60+273.15, (-5.5851); 160+273.15, (-2.3441); 180+273.15, (-2.0495); 190+273.15, (-1.9262); 200+273.15, (-1.838); 219+273.15, (-1.4706); 230+273.15, (-0.60727); 244+273.15, 1.6807; 275+273.15, 2.2558; 2000+273.15, 2.2558]);
+  extends Icons.UseableData;
+end SafeBattery;

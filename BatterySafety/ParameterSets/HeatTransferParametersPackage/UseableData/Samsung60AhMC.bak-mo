@@ -1,0 +1,6 @@
+within BatterySafety.ParameterSets.HeatTransferParametersPackage.UseableData;
+record Samsung60AhMC
+  "Heat transfer parameters for a Samsung 60Ah metal-can cell"
+  extends HeatTransferParameters(d=0.001, lambda_cell=0.75, lambda_case=235,lambda_cell_ip=24.6);
+  extends Icons.UseableData;
+end Samsung60AhMC;

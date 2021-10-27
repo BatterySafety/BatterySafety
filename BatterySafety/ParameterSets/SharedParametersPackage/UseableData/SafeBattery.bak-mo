@@ -1,0 +1,5 @@
+within BatterySafety.ParameterSets.SharedParametersPackage.UseableData;
+record SafeBattery "Shared parameters of a Safebattery cell"
+  extends SharedParameters(Q=42, m=0.87, c_p=970, R_burned=1000);
+  extends Icons.UseableData;
+end SafeBattery;

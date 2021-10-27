@@ -1,0 +1,16 @@
+within BatterySafety.ParameterSets.CellParametersPackage.UseableData;
+record SafeBattery "SafeBattery cell"
+  extends CellParameters(
+    redeclare SizeParametersPackage.UseableData.SafeBattery  dimensions,
+    redeclare SharedParametersPackage.UseableData.SafeBattery  shared,
+    redeclare HeatReleaseParametersPackage.UseableData.SafeBattery  release(
+      T1(displayUnit="K"),
+      T2(displayUnit="K"),
+      T3(displayUnit="K")),
+    redeclare HeatTransferParametersPackage.UseableData.Safebattery  transfer,
+    redeclare ElectricModelParametersPackage.UseableData.Dummy electric);
+   extends Icons.UseableData;
+  annotation (Documentation(info="<html>
+<p>To view the parameters you can open the record and view the sub-records in the Diagram.</p>
+</html>"));
+end SafeBattery;

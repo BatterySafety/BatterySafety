@@ -2,7 +2,6 @@ within BatterySafety.ParameterSets.HeatReleaseParametersPackage;
 record HeatReleaseParameters
   "Record for parameters of a thermal runaway model"
   extends Modelica.Icons.Record;
-  parameter Modelica.SIunits.Voltage U "nominal voltage of the cell";
   parameter Modelica.SIunits.Energy h "total electric energy stored inside the cell(=U*Q)";
   parameter Modelica.SIunits.Temperature T1 = 150+273.15 "Characteristic temperature T1 (begin of abnormal heat generation)";
   parameter Modelica.SIunits.Temperature T2 = 250+273.15 "Characteristic temperature T2 (thermal runaway onset temperature)";

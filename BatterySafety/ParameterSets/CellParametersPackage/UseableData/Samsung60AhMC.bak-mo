@@ -1,0 +1,11 @@
+within BatterySafety.ParameterSets.CellParametersPackage.UseableData;
+record Samsung60AhMC "Parameters for samsung 60Ah Metal Can cells"
+  extends CellParameters(
+    redeclare SizeParametersPackage.UseableData.Samsung60AhMC dimensions,
+    redeclare SharedParametersPackage.UseableData.Samsung60AhMC shared,
+    redeclare HeatReleaseParametersPackage.UseableData.Samsung60AHMC release,
+    redeclare HeatTransferParametersPackage.UseableData.Samsung60AhMC transfer,
+    redeclare ElectricModelParametersPackage.UseableData.MetalCan50Ah electric);
+
+  extends Icons.UseableData;
+end Samsung60AhMC;

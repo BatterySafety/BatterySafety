@@ -1,0 +1,5 @@
+within BatterySafety.ParameterSets.HeatTransferParametersPackage.UseableData;
+record Safebattery "Heat transfer parameters for a SafeBattery cell"
+  extends HeatTransferParameters(d=0.00019, lambda_cell=0.75, lambda_case=0.75,lambda_cell_ip=24.6);
+  extends Icons.UseableData;
+end Safebattery;

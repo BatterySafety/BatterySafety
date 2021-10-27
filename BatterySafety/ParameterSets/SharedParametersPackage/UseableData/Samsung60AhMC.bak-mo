@@ -1,0 +1,6 @@
+within BatterySafety.ParameterSets.SharedParametersPackage.UseableData;
+record Samsung60AhMC
+  "Shared parameters of a Samsung 60Ah metal-can cell"
+  extends SharedParameters(Q=60, m=0.95781, c_p=1000, R_burned=1000);
+  extends Icons.UseableData;
+end Samsung60AhMC;
