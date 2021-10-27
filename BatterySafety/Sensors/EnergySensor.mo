@@ -9,7 +9,7 @@ model EnergySensor "Energy sensor"
             -110,-10},{-90,10}})));
 equation
   E = port.E;
-  port.P_flow = 0;
+  port.P = 0;
 
   annotation (Icon(coordinateSystem(preserveAspectRatio=false), graphics={
         Text(

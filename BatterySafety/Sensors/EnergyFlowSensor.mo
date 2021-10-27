@@ -1,7 +1,7 @@
 within BatterySafety.Sensors;
 model EnergyFlowSensor "Energy flow rate sensor"
   extends Modelica.Icons.RotationalSensor;
-  Modelica.Blocks.Interfaces.RealOutput P_flow(unit="W")
+  Modelica.Blocks.Interfaces.RealOutput P(unit="W")
     "Energy flow from port_a to port_b as output signal" annotation (Placement(
         transformation(
         origin={0,-100},
@@ -13,8 +13,8 @@ model EnergyFlowSensor "Energy flow rate sensor"
             90,-10},{110,10}})));
 equation
   port_a.E = port_b.E;
-  port_a.P_flow + port_b.P_flow = 0;
-  P_flow = port_a.P_flow;
+  port_a.P + port_b.P = 0;
+  P = port_a.P;
   annotation (Icon(coordinateSystem(preserveAspectRatio=false), graphics={
         Line(points={{0,-70},{0,-90}}, color={28,108,200}),
         Line(points={{90,0},{70,0}}, color={0,255,0}),

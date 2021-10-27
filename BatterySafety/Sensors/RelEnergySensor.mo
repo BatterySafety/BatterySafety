@@ -13,8 +13,8 @@ model RelEnergySensor "Relative energy sensor"
           rotation=90)));
 equation
     E_rel = port_a.E - port_b.E;
-    0 = port_a.P_flow;
-    0 = port_b.P_flow;
+    0 = port_a.P;
+    0 = port_b.P;
 
     annotation (Line(points={{0,-90},{0,-90}}, color={0,0,127}),
                 Icon(coordinateSystem(preserveAspectRatio=false), graphics={
