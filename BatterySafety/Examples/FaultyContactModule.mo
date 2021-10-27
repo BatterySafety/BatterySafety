@@ -36,5 +36,8 @@ equation
   connect(metalCan50Ah2.port_R,metalCan50Ah3.port_L)
     annotation (Line(points={{50,0},{70,0}}, color={191,0,0}));
   annotation (Diagram(coordinateSystem(extent={{-140,-100},{140,100}})), Icon(
-        coordinateSystem(extent={{-100,-100},{100,100}})));
+        coordinateSystem(extent={{-100,-100},{100,100}})),
+    Documentation(info="<html>
+<p>In this example the leftmost cell has a defect in one of the contacts causing a higher electrical resistance leading to heat generation under load.</p>
+</html>"));
 end FaultyContactModule;

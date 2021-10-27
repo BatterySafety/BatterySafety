@@ -29,8 +29,5 @@ equation
 <p><br>The storage model stores 1J of energy which is converted to heat at the rate set by the ramp.</p>
 <p>The heat is then transported to the heat capacitor where an increase in temperature can be seen.</p>
 <p>As the capacitor has a thermal capactiance of 1J/K and 1J of heat energy flows into the capacitor the temperature increase, after the energy storage is empty, must be 1K.</p>
-<p><br>The graphics below are from a simulation of the example and show energy level of the storage and temperature of the capacitor in the first graphic, and ramp input and energy flow(=power) in the second graphic.</p>
-<p><br><img src=\"modelica://BatterySafety/Graphics/ex1_res1.png\"/></p>
-<p><img src=\"modelica://BatterySafety/Graphics/ex1_res2.png\"/></p>
 </html>"));
 end EnergyStorageAndConversion;

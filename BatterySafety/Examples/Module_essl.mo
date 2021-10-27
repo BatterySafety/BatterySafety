@@ -42,9 +42,6 @@ equation
 <p>This example shows the <a href=\"modelica://BatterySafety.Subsystems.HeatingElement\">HeatingElement</a> being used to let a <a href=\"modelica://BatterySafety.CellModels.MetalCan50Ah\">li-ion cell</a> transit into thermal runaway(TR).</p>
 <p>The heater simply generates heat according to a pre defined curve (see graphic below) which is then transported through 3 layers of different materials until reaching the cell.</p>
 <p>Once the cell reaches onset temperature for TR the heater turns off and the cell rapidly heats itself up to approx. 750 &deg;C. The parameters determining how quickly the cell transits into TR are the initial temperature T_0 and the output parameters of the HeatingElement.</p>
-<p><img src=\"modelica://BatterySafety/Graphics/heater_input.png\"/></p>
-<p><br>The inner workings of this process are explained in the corresponding models.</p>
-<p><br>Here you can see what a simulation result could look like:</p>
-<p><img src=\"modelica://BatterySafety/Graphics/ex2_res1.png\"/></p>
+<p><br><br>The inner workings of this process are explained in the corresponding models.</p>
 </html>"));
 end Module_essl;
