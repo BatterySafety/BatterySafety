@@ -31,7 +31,7 @@ equation
   connect(G_convection.y, convection.Gc)
     annotation (Line(points={{-2.22045e-15,29},{-2.22045e-15,24},{30,24},{30,10}},
                                              color={0,0,127}));
-  connect(convection.fluid, port_b)
+  connect(convection.fluid,port_R)
     annotation (Line(points={{40,0},{100,0}}, color={191,0,0}));
   connect(heatSink.port, thermalConductor.port_b)
     annotation (Line(points={{0,-80},{0,-60}}, color={191,0,0}));
@@ -39,7 +39,7 @@ equation
     annotation (Line(points={{0,-40},{0,0},{-20,0}}, color={191,0,0}));
   connect(thermalConductor.port_a, convection.solid)
     annotation (Line(points={{0,-40},{0,0},{20,0}}, color={191,0,0}));
-  connect(port_a, convection1.solid)
+  connect(port_L, convection1.solid)
     annotation (Line(points={{-100,0},{-40,0}}, color={191,0,0}));
   connect(G_convection.y, convection1.Gc) annotation (Line(points={{0,29},{0,24},
           {-30,24},{-30,10}}, color={0,0,127}));

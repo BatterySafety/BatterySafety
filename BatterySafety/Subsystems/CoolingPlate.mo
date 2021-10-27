@@ -47,9 +47,9 @@ equation
     annotation (Line(points={{0,20},{0,0},{6,0}},  color={191,0,0}));
   connect(plate_upper.port, internal_conduction.port_a) annotation (Line(points={{0,20},{0,-12},{
           1.33227e-15,-12}},                 color={191,0,0}));
-  connect(conductionL.port_a, port_a) annotation (Line(points={{-20,0},{-100,0}},
+  connect(conductionL.port_a,port_L)  annotation (Line(points={{-20,0},{-100,0}},
                             color={191,0,0}));
-  connect(conductionR.port_b, port_b)
+  connect(conductionR.port_b,port_R)
     annotation (Line(points={{22,0},{100,0}}, color={191,0,0}));
   connect(internal_conduction.port_b, plate_lower.port)
     annotation (Line(points={{-1.55431e-15,-28},{-1.55431e-15,-40},{0,-40}},

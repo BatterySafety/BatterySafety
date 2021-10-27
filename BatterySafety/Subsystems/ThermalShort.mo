@@ -3,7 +3,7 @@ model ThermalShort "Cooling model"
 
  extends Interfaces.ParametrisedHeatTransfer;
 equation
-  connect(port_a, port_b)
+  connect(port_L,port_R)
     annotation (Line(points={{-100,0},{100,0}}, color={191,0,0}));
   annotation (Icon(coordinateSystem(preserveAspectRatio=false), graphics={Line(
           points={{-100,0},{100,0}},

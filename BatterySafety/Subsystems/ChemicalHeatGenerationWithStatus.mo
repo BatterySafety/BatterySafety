@@ -7,7 +7,7 @@ model ChemicalHeatGenerationWithStatus
   parameter Real heat_release[:,2] "Heat release function";
 
 protected
-  Components.EnergyStorage energyStorage(E_max=tr_energy)
+  Components.EnergyStorage energyStorage(E_start=tr_energy)
     annotation (Placement(transformation(extent={{-70,-10},{-50,10}})));
   Components.VariableEnergy2HeatConversion conversion2heat annotation (
       Placement(transformation(

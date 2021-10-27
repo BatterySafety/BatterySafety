@@ -1,3 +1,4 @@
+HeatTransfer2D
 HeatTransfer1D
 ChemicalHeatGeneration
 ChemicalHeatGenerationWithStatus
@@ -6,7 +7,15 @@ CoolingPlateWithInsulation
 ExternalCoolingPlate
 ThermalShort
 HeatingElement
+Heater2Sided
 HeatRamp
 TemperatureDependendSwitch
 ExternalEnvironment
 GlobalParameters
+ConstantVoltageBattery
+FaultyContact
+CV_ElectricModel
+PackPlate
+PackSpacer
+CellSpacer
+HeatTransfer2D_accellerating
