@@ -3,6 +3,5 @@ record Copper "relevant material properties of copper"
   extends MaterialProperties( rho=8960, lambda=401, c=385);
   extends Icons.UseableData;
   annotation (Documentation(info="<html>
-<p>Source: <a href=\"https://en.wikipedia.org/wiki/Copper\">https://en.wikipedia.org/wiki/Copper</a></p>
 </html>"));
 end Copper;
