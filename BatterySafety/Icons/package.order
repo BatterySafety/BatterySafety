@@ -16,7 +16,7 @@ ElectricModel
 DualCellModel
 SingleCellModel
 HeatingAssembly
-HeatStorageAndTransmission
+HeatStorageAndTransport
 AbnormalHeatGeneration
 ExternalCoolingPlate
 CoolingPlate
@@ -25,3 +25,4 @@ TemperatureDependendSwitch
 ExternalEnvironment
 BatteryModule
 GlobalParameters
+BatteryPack
