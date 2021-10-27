@@ -23,12 +23,9 @@ initial equation
 
 equation
   E = port.E;
-  der(E)=port.P_flow;
+  der(E)=port.P;
 
 
-
-
-  assert(E > -1e-6, "Energy level (= " + String(E) + ") is below zero meaning that the solution failed.",AssertionLevel.warning);
   annotation (Icon(coordinateSystem(preserveAspectRatio=false), graphics={
           Text(
             extent={{-80,50},{80,30}},

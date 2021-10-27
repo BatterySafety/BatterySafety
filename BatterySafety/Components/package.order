@@ -2,3 +2,4 @@ EnergyStorage
 VariableEnergy2HeatConversion
 FixedEnergy2HeatConversion
 JouleHeatingResistor
+VariableThermalConductor
