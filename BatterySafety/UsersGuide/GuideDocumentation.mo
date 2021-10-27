@@ -5,16 +5,8 @@ model GuideDocumentation "Guide and Documentation"
         coordinateSystem(preserveAspectRatio=false)),
   Documentation(info="<html>
 <p align=\"center\"><span style=\"font-size: 20pt;\">Quick start guide</span></p>
-<p><br>This guide aims to instruct the reader(you) in the proper and intended use of this package.</p>
-<p>If you do not know how to use your <b>IDE</b>(integrated development environment, a.k.a. the software used to view this):</p>
-<ul>
-<li>The <b>Dymola</b> users manual can be found here: <a href=\"https://usermanual.wiki/Pdf/Dymola20User20Manual20Volume202.681485852/view\">https://usermanual.wiki/Pdf/Dymola20User20Manual20Volume202.681485852/view</a></li>
-<li>The <b>OpenModelica</b> users guide can be found here: <a href=\"https://www.openmodelica.org/doc/OpenModelicaUsersGuide/OpenModelicaUsersGuide-latest.pdf\">https://www.openmodelica.org/doc/OpenModelicaUsersGuide/OpenModelicaUsersGuide-latest.pdf</a></li>
-<li>The names of some other IDEs are listed here: <a href=\"https://en.wikipedia.org/wiki/Modelica#Implementations\">https://en.wikipedia.org/wiki/Modelica#Implementations</a> and instructions on them may be found through <a href=\"https://www.google.com/\">https://www.google.com</a></li>
-</ul>
-<p><br>If you do not know <b>Modelica</b>, its syntax or how to properly use the language:</p>
-<p>Instructions on the <b>Modelica</b> modeling language can be found here : <a href=\"https://mbe.modelica.university/\">https://mbe.modelica.university/</a></p>
-<p><br>First let&apos;s have a look at the contents of the package (the really important one&apos;s are <b>bold</b>):</p>
+<p><br>This guide aims to instruct the reader in the proper and intended use of this package.</p>
+<p><br>First let&apos;s have a look at the contents of the package (highly relevant subfolders are <b>bold</b>):</p>
 <ul>
 <li><a href=\"modelica://BatterySafety.UsersGuide\">UsersGuide</a>: Here you can find valuable information about the package and developer (I guess you already figured that)</li>
 <li><b><a href=\"modelica://BatterySafety.Examples\">Examples</a></b>: Here you can see the package&apos;s models put to use with a brief explanation</li>

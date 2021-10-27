@@ -1,14 +1,7 @@
-within BatterySafety;
-package UsersGuide "Users Guide"
-  extends Modelica.Icons.Information;
+within BatterySafety.UsersGuide;
+class BSD_License_3_Clause "3-Clause BSD License"
 
-
-
-annotation (__Dymola_DocumentationClass = true,uses(Modelica(version="3.2.2")),
-  Documentation(info="<html>
-<p>Package <b>BatterySafety</b> is a <b>user-defined</b> and <b>free</b> package that is developed at Virtual Vehicle Research GmbH.</p>
-<p>Further information of the <b>User&apos;s Guide</b> can be found below.</p>
-<p><br>Licensed by Virtual Vehicle Research GmbH under the 3-clause BSD License</p>
+  annotation (Documentation(info="<html>
 <p>Copyright &copy; 2021-2031, Virtual Vehicle Research GmbH.</p>
 <p>All rights reserved.</p>
 <p>Redistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are met:</p>
@@ -17,4 +10,4 @@ annotation (__Dymola_DocumentationClass = true,uses(Modelica(version="3.2.2")),
 <p>3. Neither the name of the copyright holder nor the names of its contributors may be used to endorse or promote products derived from this software without specific prior written permission.</p>
 <p>THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS &quot;AS IS&quot; AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.</p>
 </html>"));
-end UsersGuide;
+end BSD_License_3_Clause;
